@@ -1,0 +1,4 @@
+apiVersion: v1
+description: 'App Test Storage'
+name: app-test-storage
+version: 0.1.0
