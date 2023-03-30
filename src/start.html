@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Application Test Storage</title>
+
+    <link rel="stylesheet" href="index.css"/>
+    <script src="clusters.js"></script>
+    <script language="javascript">
+
+function showSize() {
+	setInterval(showSizeOnce, 1000)
+}
+
+function showSizeOnce() {
+	const Http = new XMLHttpRequest();
+	const url='size.txt';
+	Http.open("GET", url);
+	Http.send();
+
+	Http.onreadystatechange = (e) => {
+		var size = Http.responseText; 
+		var div = document.getElementById("size");
+		div.innerHTML = div		
+	}
+}
+
+function init() {
+        showSize();
+}
+
+  </script>
+
+</head>
+<body onload="init()">
+
+<span><a href="index.html">Stop loading file system</a></span>
+<span>Size on the file system : <div id="size" class='wrapper'/>Kb</span>
+
+</body>
+</html>
