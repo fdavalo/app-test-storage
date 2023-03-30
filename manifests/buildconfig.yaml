@@ -3,24 +3,22 @@ apiVersion: build.openshift.io/v1
 metadata:
   name: app-test-storage
 spec:
-  nodeSelector: null
   output:
     to:
       kind: ImageStreamTag
       name: 'app-test-storage:v1'
   strategy:
-    type: Docker
-    dockerStrategy:
+    type: Source
+    sourceStrategy:
       from:
         kind: ImageStreamTag
         namespace: openshift
-        name: 'python:3.8'       
+        name: 'python:3.8'
   source:
     type: Git
     git:
       uri: 'https://github.com/fdavalo/app-test-storage.git'
       ref: main
-    contextDir: src
   triggers:
     - type: ImageChange
       imageChange: {}
