@@ -18,7 +18,7 @@ spec:
       - name: block
         imagePullPolicy: Always
         image: quay.io/fdavalo/app-test-storage:v1 
-        command: ["sh", "-c", "tail -f /dev/null"]
+        command: ["sh", "-c", "cd src; python3 server.py"]
         env:
         - name: FS
           value: /var/lib/data
