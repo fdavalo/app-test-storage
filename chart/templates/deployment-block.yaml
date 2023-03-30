@@ -22,6 +22,11 @@ spec:
         env:
         - name: FS
           value: /var/lib/data
+        - name: BEARER_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: twitter
+              key: token          
         ports:
         - containerPort: 8080
         volumeMounts:
