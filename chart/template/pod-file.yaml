@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file
+  labels:
+    app: file
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: file
+  template:
+    metadata:
+      labels:
+        app: file
+    spec:
+      containers:
+      - name: file
+        imagePullPolicy: Always
+        image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest 
+        command: ["sh", "-c", "tail -f /dev/null"]
+        env:
+        - name: FS
+          value: /var/lib/data
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: /var/lib/data
+          name: data     
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: file-data
