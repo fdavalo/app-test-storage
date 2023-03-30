@@ -5,7 +5,7 @@ metadata:
   labels:
     app: file
 spec:
-  replicas: 2
+  replicas: {{ .Values.file.replicas }}
   selector:
     matchLabels:
       app: file
