@@ -5,8 +5,10 @@ metadata:
 spec:
   output:
     to:
-      kind: ImageStreamTag
-      name: 'app-test-storage:v1'
+      kind: DockerImage
+      name: 'quay.io/fdavalo/app-test-storage:v1'
+    pushSecret:
+      name: fdavalo-fdavalo-robot-pull-secret
   strategy:
     type: Source
     sourceStrategy:
