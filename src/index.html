@@ -5,6 +5,30 @@
     <title>Application Test Storage</title>
 
     <link rel="stylesheet" href="index.css"/>
+    <script language="javascript">
+
+function showSize() {
+	setInterval(showSizeOnce, 1000)
+}
+
+function showSizeOnce() {
+	const Http = new XMLHttpRequest();
+	const url='size.txt';
+	Http.open("GET", url);
+	Http.send();
+
+	Http.onreadystatechange = (e) => {
+		var size = Http.responseText; 
+		var div = document.getElementById("size");
+		div.innerHTML = size		
+	}
+}
+
+function init() {
+        showSize();
+}
+
+  </script>    
 </head>
 
 <span><a href="start.html">Start loading file system</a></span>
