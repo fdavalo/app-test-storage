@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:  
+  name: block-data
+  labels:
+    appname: block
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.block.storageClass | quote }}
+  resources:
+    requests:
+      storage: 5Gi
