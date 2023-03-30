@@ -1,0 +1,7 @@
+file:
+    storageClass: ocs-storagecluster-cephfs
+    replicas: 2
+    pvcMode: ReadWriteMany
+
+block:
+    storageClass: ocs-storagecluster-ceph-rbd
