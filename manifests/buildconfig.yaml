@@ -1,0 +1,30 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: app-test-storage
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'app-test-storage:v1'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'python:latest'
+      buildArgs:
+        - name: service_version
+          value: 'v1'        
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/fdavalo/app-test-storage.git'
+      ref: main
+    contextDir: src
+  triggers:
+    - type: ImageChange
+      imageChange: {}
+    - type: ConfigChange
