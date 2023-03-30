@@ -21,6 +21,7 @@ spec:
     git:
       uri: 'https://github.com/fdavalo/app-test-storage.git'
       ref: main
+    contextDir: src
   triggers:
     - type: ImageChange
       imageChange: {}
