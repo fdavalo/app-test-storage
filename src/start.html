@@ -20,7 +20,7 @@ function showSizeOnce() {
 	Http.onreadystatechange = (e) => {
 		var size = Http.responseText; 
 		var div = document.getElementById("size");
-		div.innerHTML = size		
+		div.innerHTML = "Size on the file system : "+size+" Kb"		
 	}
 }
 
@@ -35,7 +35,7 @@ function init() {
 
 <span><a href="index.html">Stop loading file system</a></span>
 <br/>
-<span>Size on the file system : <div id="size" class='wrapper'/> Kb </span>
+<span><div id="size" class='wrapper'/>
 
 </body>
 </html>
