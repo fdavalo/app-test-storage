@@ -17,8 +17,8 @@ spec:
       containers:
       - name: file
         imagePullPolicy: Always
-        image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest 
-        command: ["sh", "-c", "tail -f /dev/null"]
+        image: quay.io/fdavalo/app-test-storage:v1 
+        command: ["sh", "-c", "cd src; python3 server.py"]
         env:
         - name: FS
           value: /var/lib/data
