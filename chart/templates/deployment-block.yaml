@@ -17,7 +17,7 @@ spec:
       containers:
       - name: block
         imagePullPolicy: Always
-        image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest 
+        image: quay.io/fdavalo/app-test-storage:v1 
         command: ["sh", "-c", "tail -f /dev/null"]
         env:
         - name: FS
