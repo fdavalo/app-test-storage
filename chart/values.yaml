@@ -2,6 +2,8 @@ file:
     storageClass: ocs-storagecluster-cephfs
     replicas: 2
     pvcMode: ReadWriteMany
+    size: 5Gi
 
 block:
     storageClass: ocs-storagecluster-ceph-rbd
+    size: 5Gi
