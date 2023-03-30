@@ -10,4 +10,4 @@ spec:
   storageClassName: {{ .Values.block.storageClass | quote }}
   resources:
     requests:
-      storage: 5Gi
+      storage: {{ .Values.block.size | quote }}
