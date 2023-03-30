@@ -14,10 +14,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: openshift
-        name: 'python:latest'
-      buildArgs:
-        - name: service_version
-          value: 'v1'        
+        name: 'python:3.8'       
   source:
     type: Git
     git:
