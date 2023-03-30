@@ -6,8 +6,8 @@ metadata:
     appname: file
 spec:
   accessModes:
-    - ReadWriteOnce
+    - {{ .Values.file.pvcMode | quote }}
   storageClassName: {{ .Values.file.storageClass | quote }}
   resources:
     requests:
-      storage: 5Gi
+      storage: {{ .Values.file.size | quote }}
