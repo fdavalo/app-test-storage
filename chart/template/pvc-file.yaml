@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:  
+  name: file-data
+  labels:
+    appname: file
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.file.storageClass | quote }}
+  resources:
+    requests:
+      storage: 5Gi
