@@ -1,1 +1,1 @@
-python3 search-stream.py
+python3 randomimage.py
