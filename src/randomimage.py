@@ -12,7 +12,7 @@ api_url = 'https://api.api-ninjas.com/v1/randomimage?category={}'.format(categor
 while True:
     response = requests.get(api_url, headers={'X-Api-Key': token, 'Accept': 'image/jpg'}, stream=True)
     if response.status_code == requests.codes.ok:
-        fn = datetime.datetime.now().strftime('%m%d%Y-%H%M%S')
+        fn = os.environ['FS'] + "/" + datetime.datetime.now().strftime('%m%d%Y-%H%M%S')
         with open(fn+'.jpg', 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
     else:
